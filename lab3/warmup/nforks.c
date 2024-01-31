@@ -20,7 +20,8 @@ int main(int argc, char* argv[]) {
     }
   }
   for (int i = 0; i < N; i++) {
-    wait(NULL);
+    int rc_wait = wait(NULL);
+    printf("I am parent and I reaped child with PID %d\n", rc_wait);
   }
   printf("I am parent and I reaped all children\n");
   return 0;
